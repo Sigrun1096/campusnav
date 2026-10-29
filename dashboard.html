@@ -264,6 +264,182 @@
         margin: 0;
       }
 
+      .about-description {
+        color: #fff;
+      }
+
+      .developer-credit {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(234,191,74,.55);
+        color: #eabf4a;
+        font-size: clamp(15px, 1.4vw, 18px);
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .account-card {
+        max-height: calc(100vh - 110px);
+        overflow-y: auto;
+      }
+
+      .profile-summary {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      .profile-avatar {
+        width: 96px;
+        height: 96px;
+        flex: 0 0 96px;
+        border: 3px solid #eabf4a;
+        border-radius: 50%;
+        object-fit: cover;
+        background: rgba(255,255,255,.12);
+      }
+
+      .profile-summary h2 {
+        margin: 0 0 4px;
+        color: #fff;
+      }
+
+      .profile-status {
+        margin: 0;
+        color: #d9e8df;
+        font-size: 14px;
+      }
+
+      .profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 18px 0;
+      }
+
+      .profile-field {
+        min-width: 0;
+        padding: 12px;
+        border-radius: 10px;
+        background: rgba(255,255,255,.08);
+      }
+
+      .profile-field span {
+        display: block;
+        margin-bottom: 3px;
+        color: #eabf4a;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .profile-field strong {
+        overflow-wrap: anywhere;
+        font-size: 16px;
+      }
+
+      .account-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .account-actions button,
+      .profile-form button {
+        border: 0;
+        border-radius: 9px;
+        padding: 11px 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: transform 160ms ease, opacity 160ms ease;
+      }
+
+      .account-actions button:hover,
+      .profile-form button:hover {
+        transform: translateY(-2px);
+      }
+
+      .primary-button {
+        background: #eabf4a;
+        color: #173b2b;
+      }
+
+      .secondary-button {
+        background: rgba(255,255,255,.14);
+        color: #fff;
+      }
+
+      .profile-form {
+        display: none;
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(234,191,74,.4);
+      }
+
+      .profile-form.is-open {
+        display: block;
+        animation: profileReveal 180ms ease-out;
+      }
+
+      @keyframes profileReveal {
+        from { opacity: 0; transform: translateY(-6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .profile-form label {
+        display: block;
+        margin-bottom: 4px;
+        color: #f7efcf;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .profile-form input[type="text"],
+      .profile-form input[type="email"] {
+        width: 100%;
+        min-height: 44px;
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,.35);
+        border-radius: 8px;
+        background: rgba(255,255,255,.95);
+        color: #173b2b;
+      }
+
+      .form-message {
+        min-height: 22px;
+        margin: 12px 0 0;
+        font-size: 14px;
+      }
+
+      .form-message.success { color: #b7e6a0; }
+      .form-message.error { color: #ffc1c1; }
+
+      .password-message {
+        margin-top: 14px;
+        padding: 12px;
+        border: 1px solid rgba(234,191,74,.55);
+        border-radius: 8px;
+        background: rgba(16,43,30,.92);
+        color: #eabf4a;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .password-message.is-highlighted {
+        animation: availabilityPulse 280ms ease-out;
+      }
+
+      @keyframes availabilityPulse {
+        50% { background: rgba(234,191,74,.22); }
+      }
+
       @media (max-width: 600px) {
         html,
         body {
@@ -337,6 +513,21 @@
         .info-card {
           padding: 24px 20px;
           border-radius: 16px;
+        }
+
+        .profile-summary,
+        .account-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .profile-grid,
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-avatar {
+          align-self: center;
         }
 
         .back {
@@ -458,9 +649,14 @@
         <button class="back" data-goto="1">&larr; Back</button>
         <section class="info-card">
           <h1>About CampusNav</h1>
-          <p>
-            CampusNav helps students and visitors find classrooms, buildings,
-            and departments around Gordon College.
+          <p class="about-description">
+            CampusNav is a campus navigation website designed to help people, including students, staff
+            faculty, and visitors easily find classrooms,~ offices, and
+            departments around Gordon College. It makes navigating the campus
+            simpler and more convenient by helping users locate important places.
+          </p>
+          <p class="developer-credit">
+            Developed by Group 2 — 404 Can't Be Found
           </p>
         </section>
       </div>
@@ -468,12 +664,56 @@
       <!-- PAGE 4: Account -->
       <div class="page info-page" id="page4">
         <button class="back" data-goto="1">&larr; Back</button>
-        <section class="info-card">
+        <section class="info-card account-card">
           <h1>Your Account</h1>
-          <p>
-            Sign in to view your account details and personalized campus
-            information.
-          </p>
+          <div class="profile-summary">
+            <img class="profile-avatar" id="profileAvatar" src="" alt="Profile avatar" />
+            <div>
+              <h2 id="profileDisplayName">No profile available</h2>
+              <p class="profile-status" id="profileStatus">Visitors can browse CampusNav without an account.</p>
+            </div>
+          </div>
+
+          <div class="profile-grid" aria-live="polite">
+            <div class="profile-field"><span>Full Name</span><strong id="profileFullName">Not provided</strong></div>
+            <div class="profile-field"><span>Email Address</span><strong id="profileEmail">Not provided</strong></div>
+            <div class="profile-field"><span>Student / User ID</span><strong id="profileUserId">Not provided</strong></div>
+            <div class="profile-field"><span>Username</span><strong id="profileUsername">Not provided</strong></div>
+            <div class="profile-field"><span>Account Role</span><strong id="profileRole">Not provided</strong></div>
+          </div>
+
+          <div class="account-actions">
+            <button class="primary-button" type="button" id="editProfileButton">Edit Profile</button>
+            <button class="secondary-button" type="button" id="changePasswordButton">Change Password</button>
+          </div>
+
+          <form class="profile-form" id="editProfileForm" novalidate>
+            <div class="form-grid">
+              <div>
+                <label for="avatarInput">Profile picture</label>
+                <input type="file" id="avatarInput" accept="image/png,image/jpeg,image/webp" />
+              </div>
+              <div>
+                <label for="fullNameInput">Full name *</label>
+                <input type="text" id="fullNameInput" maxlength="80" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="usernameInput">Username *</label>
+                <input type="text" id="usernameInput" maxlength="40" autocomplete="username" required />
+              </div>
+              <div>
+                <label for="emailInput">Email address</label>
+                <input type="email" id="emailInput" maxlength="120" autocomplete="email" />
+              </div>
+            </div>
+            <p class="form-message" id="profileFormMessage" role="status"></p>
+            <div class="account-actions">
+              <button class="primary-button" type="submit">Save Changes</button>
+              <button class="secondary-button" type="button" id="cancelEditButton">Cancel</button>
+            </div>
+          </form>
+
+          <div class="password-message" id="passwordNotice" role="status">Not Yet Available</div>
         </section>
       </div>
     </div>
@@ -523,6 +763,159 @@
       document.getElementById("campusSearch").addEventListener("submit", (event) => {
         event.preventDefault();
         show(2);
+      });
+
+      const defaultAvatar = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='48' fill='%231b5138'/%3E%3Ccircle cx='48' cy='36' r='16' fill='%23eabf4a'/%3E%3Cpath d='M18 82c4-18 16-27 30-27s26 9 30 27' fill='%23eabf4a'/%3E%3C/svg%3E";
+      const sessionKey = "campusnav.session";
+      let currentProfile = null;
+
+      function getSessionIdentity() {
+        try {
+          const session = JSON.parse(sessionStorage.getItem(sessionKey));
+          return typeof session?.username === "string" ? session.username.trim() : "";
+        } catch {
+          return "";
+        }
+      }
+
+      function profileStorageKey(identity) {
+        return `campusnav.profile.${encodeURIComponent(identity)}`;
+      }
+
+      function loadProfile(identity) {
+        try {
+          return JSON.parse(localStorage.getItem(profileStorageKey(identity))) || {
+            fullName: "",
+            username: identity,
+            email: "",
+            avatar: ""
+          };
+        } catch {
+          return null;
+        }
+      }
+
+      function saveProfile(profile) {
+        localStorage.setItem(profileStorageKey(profile.username), JSON.stringify(profile));
+      }
+
+      function setProfileText(profile) {
+        document.getElementById("profileDisplayName").textContent = profile ? (profile.fullName || profile.username || "Profile available") : "No profile available";
+        document.getElementById("profileStatus").textContent = profile
+          ? "This profile is stored locally in this browser."
+          : "Visitors can browse CampusNav without an account.";
+        document.getElementById("profileFullName").textContent = profile?.fullName || "Not provided";
+        document.getElementById("profileEmail").textContent = profile?.email || "Not provided";
+        document.getElementById("profileUserId").textContent = profile?.username || "Not provided";
+        document.getElementById("profileUsername").textContent = profile?.username || "Not provided";
+        document.getElementById("profileRole").textContent = profile ? "Not provided" : "Not provided";
+        document.getElementById("profileAvatar").src = profile?.avatar || defaultAvatar;
+      }
+
+      function populateProfileForm() {
+        document.getElementById("fullNameInput").value = currentProfile.fullName || "";
+        document.getElementById("usernameInput").value = currentProfile.username || "";
+        document.getElementById("emailInput").value = currentProfile.email || "";
+        document.getElementById("avatarInput").value = "";
+      }
+
+      function closeProfileForm() {
+        document.getElementById("editProfileForm").classList.remove("is-open");
+        document.getElementById("profileFormMessage").textContent = "";
+      }
+
+      const sessionIdentity = getSessionIdentity();
+      currentProfile = sessionIdentity ? loadProfile(sessionIdentity) : null;
+      setProfileText(currentProfile);
+      document.getElementById("editProfileButton").disabled = !currentProfile;
+      document.getElementById("editProfileButton").title = currentProfile ? "Edit local profile" : "Sign in or enter a username to create a local browser profile";
+
+      document.getElementById("editProfileButton").addEventListener("click", () => {
+        if (!currentProfile) {
+          return;
+        }
+        populateProfileForm();
+        document.getElementById("editProfileForm").classList.add("is-open");
+      });
+
+      document.getElementById("cancelEditButton").addEventListener("click", closeProfileForm);
+      document.getElementById("changePasswordButton").addEventListener("click", () => {
+        const notice = document.getElementById("passwordNotice");
+        notice.classList.remove("is-highlighted");
+        void notice.offsetWidth;
+        notice.classList.add("is-highlighted");
+        window.setTimeout(() => notice.classList.remove("is-highlighted"), 300);
+      });
+
+      document.getElementById("avatarInput").addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+          document.getElementById("profileFormMessage").textContent = "Choose a PNG, JPEG, or WebP image.";
+          document.getElementById("profileFormMessage").className = "form-message error";
+          event.target.value = "";
+          return;
+        }
+        if (file.size > 2 * 1024 * 1024) {
+          document.getElementById("profileFormMessage").textContent = "Profile picture must be smaller than 2 MB.";
+          document.getElementById("profileFormMessage").className = "form-message error";
+          event.target.value = "";
+        }
+      });
+
+      document.getElementById("editProfileForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const fullName = document.getElementById("fullNameInput").value.trim();
+        const username = document.getElementById("usernameInput").value.trim();
+        const email = document.getElementById("emailInput").value.trim();
+        const message = document.getElementById("profileFormMessage");
+
+        if (!fullName || !username) {
+          message.textContent = "Full name and username are required.";
+          message.className = "form-message error";
+          return;
+        }
+        if (!/^[A-Za-z0-9_.-]+$/.test(username)) {
+          message.textContent = "Username may contain only letters, numbers, dots, underscores, and hyphens.";
+          message.className = "form-message error";
+          return;
+        }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          message.textContent = "Enter a valid email address.";
+          message.className = "form-message error";
+          return;
+        }
+
+        const completeSave = () => {
+          const oldIdentity = sessionIdentity;
+          const updated = { ...currentProfile, fullName, username, email };
+          if (username !== oldIdentity) {
+            localStorage.removeItem(profileStorageKey(oldIdentity));
+          }
+          saveProfile(updated);
+          sessionStorage.setItem(sessionKey, JSON.stringify({ username }));
+          currentProfile = updated;
+          setProfileText(currentProfile);
+          message.textContent = "Profile changes saved.";
+          message.className = "form-message success";
+          window.setTimeout(closeProfileForm, 700);
+        };
+
+        const avatarFile = document.getElementById("avatarInput").files[0];
+        if (avatarFile) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            currentProfile.avatar = reader.result;
+            completeSave();
+          };
+          reader.onerror = () => {
+            message.textContent = "The profile picture could not be read. Please try another file.";
+            message.className = "form-message error";
+          };
+          reader.readAsDataURL(avatarFile);
+        } else {
+          completeSave();
+        }
       });
 
       // Back buttons
