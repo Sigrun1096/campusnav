@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  background-color: darkgrey;
+  color: teal;
+  border-radius: 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
