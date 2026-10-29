@@ -1,26 +1,53 @@
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 16px 32px;
-  box-sizing: border-box;
+  padding: clamp(12px, 2vw, 16px) clamp(16px, 4vw, 32px);
   background-color: darkgrey;
   color: teal;
-  border-radius: 18px;
+  border-radius: clamp(12px, 2vw, 18px);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: clamp(6px, 1vw, 8px);
 }
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: clamp(8px, 2vw, 20px);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+  }
 }

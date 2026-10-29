@@ -23,7 +23,9 @@
       #stage {
         position: relative;
         width: 100%;
-        aspect-ratio: 16 / 9;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 320px;
         overflow: hidden;
       }
 
@@ -97,18 +99,7 @@
       }
       @media (orientation: portrait) and (max-width: 700px) {
         #rotate-hint {
-          display: block;
-          position: fixed;
-          left: 50%;
-          bottom: 6%;
-          transform: translateX(-50%);
-          padding: 0.7em 1.2em;
-          border-radius: 999px;
-          background: rgba(52, 86, 56, 0.92);
-          color: #fff;
-          font: 600 14px sans-serif;
-          pointer-events: none;
-          white-space: nowrap;
+          display: none;
         }
       }
 
@@ -241,16 +232,96 @@
       }
 
       @media (max-width: 600px) {
-        .site-nav {
-          gap: 8px;
+        html,
+        body {
+          overflow: hidden;
         }
 
         .site-header {
           align-items: flex-start;
+          padding: 14px 16px;
+        }
+
+        .site-nav {
+          gap: 8px;
+        }
+
+        .site-nav button {
+          min-height: 44px;
+          padding: 0.55em 0.8em;
+        }
+
+        .home-content {
+          gap: 14px;
+          justify-content: center;
+          padding: 76px 16px 24px;
+        }
+
+        .home-content h1 {
+          font-size: clamp(28px, 9vw, 42px);
+        }
+
+        .home-content > p {
+          font-size: 15px;
         }
 
         .search-form {
+          flex-direction: column;
+          gap: 8px;
+          padding: 8px;
           border-radius: 18px;
+        }
+
+        .search-form input {
+          width: 100%;
+          min-height: 44px;
+        }
+
+        .search-form button {
+          width: 100%;
+          min-height: 44px;
+        }
+
+        .info-page,
+        #page3.info-page,
+        #page4.info-page {
+          padding: 70px 16px 24px;
+          overflow-y: auto;
+        }
+
+        .info-card {
+          padding: 24px 20px;
+          border-radius: 16px;
+        }
+
+        .back {
+          top: 14px;
+          left: 14px;
+          min-height: 44px;
+        }
+      }
+
+      @media (max-height: 500px) {
+        .home-content {
+          gap: 8px;
+          justify-content: center;
+          padding-top: 58px;
+        }
+
+        .home-content h1 {
+          font-size: 30px;
+        }
+
+        .home-content > p {
+          display: none;
+        }
+
+        .search-form {
+          flex-direction: row;
+        }
+
+        .search-form button {
+          width: auto;
         }
       }
     </style>
