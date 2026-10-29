@@ -152,8 +152,8 @@
       }
 
       .home-content {
-        position: absolute;
-        inset: 0;
+        position: relative;
+        min-height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -200,6 +200,39 @@
       .search-form button {
         padding: 0.75em 1.5em;
       }
+
+      #page1 {
+        overflow-y: auto;
+      }
+
+      .floor-explorer {
+        width: min(100%, 760px);
+        margin-top: clamp(4px, 1vh, 12px);
+        padding: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 22px;
+        background: rgba(16, 43, 30, 0.82);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(5px);
+      }
+      .floor-explorer-heading h2 { margin: 0; font-size: clamp(20px, 2.5vw, 28px); }
+      .floor-explorer-heading p { margin: 5px 0 12px; font-size: clamp(13px, 1.3vw, 16px); color: rgba(255,255,255,.88); }
+      .floor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+      .floor-card {
+        display: flex; min-width: 0; min-height: 92px; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+        padding: 10px 8px; border: 1px solid rgba(234,191,74,.55); border-radius: 16px;
+        background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(245,240,220,.96)); color: #17513a;
+        box-shadow: 0 8px 18px rgba(0,0,0,.18); font-family: Arial, sans-serif; cursor: pointer;
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+      .floor-card:hover, .floor-card:focus-visible { transform: translateY(-4px); border-color: #eabf4a; box-shadow: 0 14px 24px rgba(0,0,0,.28); outline: none; }
+      .floor-icon { font-size: 22px; line-height: 1; }
+      .floor-number { font-size: clamp(16px,1.7vw,20px); font-weight: 800; }
+      .floor-action { color: #b18113; font-size: 12px; font-weight: 700; }
+      .floor-page { display: flex; align-items: center; justify-content: center; padding: 70px 20px 24px; background: linear-gradient(rgba(20,45,33,.72),rgba(20,45,33,.82)), url("2.jpg") center / cover no-repeat; overflow-y: auto; }
+      .floor-details-card { width: min(100%,720px); max-height: 80vh; padding: clamp(24px,5vw,52px); border: 1px solid rgba(234,191,74,.65); border-radius: 20px; background: rgba(16,43,30,.88); color: #fff; font-family: Arial,sans-serif; overflow-y: auto; }
+      .floor-details-card h1 { margin: 0 0 12px; font-size: clamp(28px,4vw,46px); }
+      .floor-details-card ul { margin: 18px 0 0; padding-left: 24px; line-height: 1.8; }
 
       #page3.info-page,
       #page4.info-page {
@@ -282,6 +315,18 @@
           min-height: 44px;
         }
 
+        .floor-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .floor-card {
+          min-height: 86px;
+        }
+
+        .floor-explorer {
+          margin-bottom: 12px;
+        }
+
         .info-page,
         #page3.info-page,
         #page4.info-page {
@@ -351,12 +396,61 @@
             />
             <button type="submit">Search</button>
           </form>
+
+          <section class="floor-explorer" aria-labelledby="floorExplorerTitle">
+            <div class="floor-explorer-heading">
+              <h2 id="floorExplorerTitle">Explore Campus Floors</h2>
+              <p>Select a floor to find rooms and departments.</p>
+            </div>
+            <div class="floor-grid">
+              <button class="floor-card" type="button" data-floor="1" aria-label="Explore Floor 1 rooms and departments">
+                <span class="floor-icon" aria-hidden="true">🏢</span>
+                <span class="floor-number">Floor 1</span>
+                <span class="floor-action">Explore Rooms</span>
+              </button>
+              <button class="floor-card" type="button" data-floor="2" aria-label="Explore Floor 2 rooms and departments">
+                <span class="floor-icon" aria-hidden="true">🏢</span>
+                <span class="floor-number">Floor 2</span>
+                <span class="floor-action">Explore Rooms</span>
+              </button>
+              <button class="floor-card" type="button" data-floor="3" aria-label="Explore Floor 3 rooms and departments">
+                <span class="floor-icon" aria-hidden="true">🏢</span>
+                <span class="floor-number">Floor 3</span>
+                <span class="floor-action">Explore Rooms</span>
+              </button>
+              <button class="floor-card" type="button" data-floor="4" aria-label="Explore Floor 4 rooms and departments">
+                <span class="floor-icon" aria-hidden="true">🏢</span>
+                <span class="floor-number">Floor 4</span>
+                <span class="floor-action">Explore Rooms</span>
+              </button>
+              <button class="floor-card" type="button" data-floor="5" aria-label="Explore Floor 5 rooms and departments">
+                <span class="floor-icon" aria-hidden="true">🏢</span>
+                <span class="floor-number">Floor 5</span>
+                <span class="floor-action">Explore Rooms</span>
+              </button>
+              <button class="floor-card" type="button" data-floor="6" aria-label="Explore Floor 6 rooms and departments">
+                <span class="floor-icon" aria-hidden="true">🏢</span>
+                <span class="floor-number">Floor 6</span>
+                <span class="floor-action">Explore Rooms</span>
+              </button>
+            </div>
+          </section>
         </main>
       </div>
 
       <!-- PAGE 2 Map -->
       <div class="page" id="page2">
         <button class="back" data-goto="1">&larr; Back</button>
+      </div>
+
+      <!-- PAGE 5: Floor details -->
+      <div class="page floor-page" id="page5">
+        <button class="back" data-goto="1">&larr; Back to floors</button>
+        <section class="floor-details-card">
+          <h1 id="floorDetailsTitle">Floor Rooms and Departments</h1>
+          <p id="floorDetailsIntro">Explore the rooms and departments on this floor.</p>
+          <ul id="floorDetailsList"></ul>
+        </section>
       </div>
 
       <!-- PAGE 3: About -->
@@ -390,6 +484,7 @@
         2: document.getElementById("page2"),
         3: document.getElementById("page3"),
         4: document.getElementById("page4"),
+        5: document.getElementById("page5"),
       };
 
       function show(n) {
@@ -402,6 +497,27 @@
           event.preventDefault();
           show(Number(button.dataset.goto));
         };
+      });
+
+      const floorLocations = {
+        1: ["Registrar's Office", "Student Services", "Room 101 - Lecture Hall", "Room 102 - Classroom"],
+        2: ["Information Technology", "Room 201 - Computer Lab", "Room 202 - Classroom", "Room 203 - Classroom"],
+        3: ["College of Education", "Faculty Offices", "Room 301 - Classroom", "Room 302 - Lecture Hall"],
+        4: ["College of Business", "Conference Room", "Room 401 - Classroom", "Room 402 - Classroom"],
+        5: ["College of Arts and Sciences", "Science Laboratory", "Room 501 - Classroom", "Room 502 - Laboratory"],
+        6: ["Library Department", "Research Room", "Room 601 - Conference Room", "Room 602 - Faculty Lounge"]
+      };
+
+      document.querySelectorAll(".floor-card[data-floor]").forEach((card) => {
+        card.addEventListener("click", () => {
+          const floor = card.dataset.floor;
+          document.getElementById("floorDetailsTitle").textContent = `Floor ${floor} Rooms and Departments`;
+          document.getElementById("floorDetailsIntro").textContent = `Explore the rooms and departments available on Floor ${floor}.`;
+          document.getElementById("floorDetailsList").innerHTML = floorLocations[floor]
+            .map((location) => `<li>${location}</li>`)
+            .join("");
+          show(5);
+        });
       });
 
       document.getElementById("campusSearch").addEventListener("submit", (event) => {
