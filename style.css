@@ -110,6 +110,15 @@ button[type="submit"]:hover {
   background: #c9c9c9;
 }
 
+button[type="submit"].is-ready {
+  background: #078753;
+  color: #fff;
+}
+
+button[type="submit"].is-ready:hover {
+  background: #078753;
+}
+
 .privacy-notice {
   margin: 0;
   color: #46566b;

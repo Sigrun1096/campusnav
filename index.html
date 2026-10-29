@@ -30,7 +30,7 @@
             id="username"
             name="username"
             required
-            placeholder="Email/ID/Registration Number"
+            placeholder="Email/ID"
           />
         </div>
 
@@ -44,7 +44,7 @@
             placeholder="Your password"
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" id="login-button">Login</button>
       </form>
       <p class="privacy-notice">
         By clicking the login button, you recognize the authority of Gordon
@@ -54,5 +54,13 @@
         and applicable laws.
       </p>
     </div>
+    <script>
+      const passwordInput = document.getElementById("password");
+      const loginButton = document.getElementById("login-button");
+
+      passwordInput.addEventListener("input", () => {
+        loginButton.classList.toggle("is-ready", passwordInput.value.length > 0);
+      });
+    </script>
   </body>
 </html>
