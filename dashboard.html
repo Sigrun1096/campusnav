@@ -200,7 +200,28 @@
       .search-form button {
         padding: 0.75em 1.5em;
       }
-
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;          /* space between About, Account, Logout */
+    }
+ 
+    .nav-btn {
+      background: #006747;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 28px;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+ 
+    .nav-btn:hover {
+      background: #004d35;
+    }
       #page1 {
         overflow-y: auto;
       }
@@ -927,6 +948,20 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") show(1);
       });
+      // LOGOUT
+      document.getElementById("logoutBtn").addEventListener("click", function () {
+      localStorage.clear();
+      sessionStorage.clear();
+      window.location.href = "index.html"; // change to your login page filename
+      });
+ 
+      // SEARCH (replace with your own search logic)
+      document.getElementById("searchBtn").addEventListener("click", function () {
+      const query = document.getElementById("searchInput").value.trim();
+      if (query) {
+        alert("Searching for: " + query);
+      }
+    });
     </script>
   </body>
 </html>
