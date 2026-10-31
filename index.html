@@ -77,6 +77,7 @@
           "campusnav.session",
           JSON.stringify({ username })
         );
+        sessionStorage.removeItem("campusnav.loggedOut");
         passwordInput.value = "";
         window.location.href = "dashboard.html";
       });
