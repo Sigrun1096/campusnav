@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusNav</title>
-
-    <link rel="icon" type="img" href="icon.png" />
     <style>
       body {
         margin: 0;
@@ -123,7 +121,9 @@
         width: 100%;
         padding: clamp(14px, 2.5vw, 32px) clamp(18px, 4vw, 58px);
         color: #fff;
-        font: 600 clamp(14px, 1.4vw, 20px) Arial, sans-serif;
+        font:
+          600 clamp(14px, 1.4vw, 20px) Arial,
+          sans-serif;
       }
 
       .site-brand {
@@ -195,35 +195,16 @@
         outline: 0;
         background: transparent;
         color: #25372d;
-        font: 16px Arial, sans-serif;
+        font:
+          16px Arial,
+          sans-serif;
         border-radius: 18px;
       }
 
       .search-form button {
         padding: 0.75em 1.5em;
       }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
- 
-    .nav-btn {
-      background: #006747;
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 28px;
-      font-size: 20px;
-      font-weight: bold;
-      font-family: inherit;
-      text-decoration: none;
-      cursor: pointer;
-    }
- 
-    .nav-btn:hover {
-      background: #004d35;
-    }
+
       #page1 {
         overflow-y: auto;
       }
@@ -238,24 +219,95 @@
         box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
         backdrop-filter: blur(5px);
       }
-      .floor-explorer-heading h2 { margin: 0; font-size: clamp(20px, 2.5vw, 28px); }
-      .floor-explorer-heading p { margin: 5px 0 12px; font-size: clamp(13px, 1.3vw, 16px); color: rgba(255,255,255,.88); }
-      .floor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-      .floor-card {
-        display: flex; min-width: 0; min-height: 92px; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
-        padding: 10px 8px; border: 1px solid rgba(234,191,74,.55); border-radius: 16px;
-        background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(245,240,220,.96)); color: #17513a;
-        box-shadow: 0 8px 18px rgba(0,0,0,.18); font-family: Arial, sans-serif; cursor: pointer;
-        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      .floor-explorer-heading h2 {
+        margin: 0;
+        font-size: clamp(20px, 2.5vw, 28px);
       }
-      .floor-card:hover, .floor-card:focus-visible { transform: translateY(-4px); border-color: #eabf4a; box-shadow: 0 14px 24px rgba(0,0,0,.28); outline: none; }
-      .floor-icon { font-size: 22px; line-height: 1; }
-      .floor-number { font-size: clamp(16px,1.7vw,20px); font-weight: 800; }
-      .floor-action { color: #b18113; font-size: 12px; font-weight: 700; }
-      .floor-page { display: flex; align-items: center; justify-content: center; padding: 70px 20px 24px; background: linear-gradient(rgba(20,45,33,.72),rgba(20,45,33,.82)), url("2.jpg") center / cover no-repeat; overflow-y: auto; }
-      .floor-details-card { width: min(100%,720px); max-height: 80vh; padding: clamp(24px,5vw,52px); border: 1px solid rgba(234,191,74,.65); border-radius: 20px; background: rgba(16,43,30,.88); color: #fff; font-family: Arial,sans-serif; overflow-y: auto; }
-      .floor-details-card h1 { margin: 0 0 12px; font-size: clamp(28px,4vw,46px); }
-      .floor-details-card ul { margin: 18px 0 0; padding-left: 24px; line-height: 1.8; }
+      .floor-explorer-heading p {
+        margin: 5px 0 12px;
+        font-size: clamp(13px, 1.3vw, 16px);
+        color: rgba(255, 255, 255, 0.88);
+      }
+      .floor-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .floor-card {
+        display: flex;
+        min-width: 0;
+        min-height: 92px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 10px 8px;
+        border: 1px solid rgba(234, 191, 74, 0.55);
+        border-radius: 16px;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.98),
+          rgba(245, 240, 220, 0.96)
+        );
+        color: #17513a;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          border-color 180ms ease;
+      }
+      .floor-card:hover,
+      .floor-card:focus-visible {
+        transform: translateY(-4px);
+        border-color: #eabf4a;
+        box-shadow: 0 14px 24px rgba(0, 0, 0, 0.28);
+        outline: none;
+      }
+      .floor-icon {
+        font-size: 22px;
+        line-height: 1;
+      }
+      .floor-number {
+        font-size: clamp(16px, 1.7vw, 20px);
+        font-weight: 800;
+      }
+      .floor-action {
+        color: #b18113;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .floor-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 70px 20px 24px;
+        background:
+          linear-gradient(rgba(20, 45, 33, 0.72), rgba(20, 45, 33, 0.82)),
+          url("2.jpg") center / cover no-repeat;
+        overflow-y: auto;
+      }
+      .floor-details-card {
+        width: min(100%, 720px);
+        max-height: 80vh;
+        padding: clamp(24px, 5vw, 52px);
+        border: 1px solid rgba(234, 191, 74, 0.65);
+        border-radius: 20px;
+        background: rgba(16, 43, 30, 0.88);
+        color: #fff;
+        font-family: Arial, sans-serif;
+        overflow-y: auto;
+      }
+      .floor-details-card h1 {
+        margin: 0 0 12px;
+        font-size: clamp(28px, 4vw, 46px);
+      }
+      .floor-details-card ul {
+        margin: 18px 0 0;
+        padding-left: 24px;
+        line-height: 1.8;
+      }
 
       #page3.info-page,
       #page4.info-page {
@@ -267,7 +319,9 @@
           linear-gradient(rgba(20, 45, 33, 0.6), rgba(20, 45, 33, 0.72)),
           url("2.jpg") center / cover no-repeat;
         color: #fff;
-        font: clamp(15px, 1.5vw, 21px) / 1.6 Arial, sans-serif;
+        font:
+          clamp(15px, 1.5vw, 21px) / 1.6 Arial,
+          sans-serif;
       }
 
       .info-card {
@@ -294,7 +348,7 @@
       .developer-credit {
         margin-top: 22px;
         padding-top: 18px;
-        border-top: 1px solid rgba(234,191,74,.55);
+        border-top: 1px solid rgba(234, 191, 74, 0.55);
         color: #eabf4a;
         font-size: clamp(15px, 1.4vw, 18px);
         font-weight: 700;
@@ -320,7 +374,7 @@
         border: 3px solid #eabf4a;
         border-radius: 50%;
         object-fit: cover;
-        background: rgba(255,255,255,.12);
+        background: rgba(255, 255, 255, 0.12);
       }
 
       .profile-summary h2 {
@@ -345,7 +399,7 @@
         min-width: 0;
         padding: 12px;
         border-radius: 10px;
-        background: rgba(255,255,255,.08);
+        background: rgba(255, 255, 255, 0.08);
       }
 
       .profile-field span {
@@ -375,7 +429,9 @@
         padding: 11px 16px;
         font-weight: 700;
         cursor: pointer;
-        transition: transform 160ms ease, opacity 160ms ease;
+        transition:
+          transform 160ms ease,
+          opacity 160ms ease;
       }
 
       .account-actions button:hover,
@@ -389,7 +445,7 @@
       }
 
       .secondary-button {
-        background: rgba(255,255,255,.14);
+        background: rgba(255, 255, 255, 0.14);
         color: #fff;
       }
 
@@ -397,7 +453,7 @@
         display: none;
         margin-top: 18px;
         padding-top: 18px;
-        border-top: 1px solid rgba(234,191,74,.4);
+        border-top: 1px solid rgba(234, 191, 74, 0.4);
       }
 
       .profile-form.is-open {
@@ -406,8 +462,14 @@
       }
 
       @keyframes profileReveal {
-        from { opacity: 0; transform: translateY(-6px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(-6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .form-grid {
@@ -429,9 +491,9 @@
         width: 100%;
         min-height: 44px;
         padding: 10px;
-        border: 1px solid rgba(255,255,255,.35);
+        border: 1px solid rgba(255, 255, 255, 0.35);
         border-radius: 8px;
-        background: rgba(255,255,255,.95);
+        background: rgba(255, 255, 255, 0.95);
         color: #173b2b;
       }
 
@@ -441,15 +503,19 @@
         font-size: 14px;
       }
 
-      .form-message.success { color: #b7e6a0; }
-      .form-message.error { color: #ffc1c1; }
+      .form-message.success {
+        color: #b7e6a0;
+      }
+      .form-message.error {
+        color: #ffc1c1;
+      }
 
       .password-message {
         margin-top: 14px;
         padding: 12px;
-        border: 1px solid rgba(234,191,74,.55);
+        border: 1px solid rgba(234, 191, 74, 0.55);
         border-radius: 8px;
-        background: rgba(16,43,30,.92);
+        background: rgba(16, 43, 30, 0.92);
         color: #eabf4a;
         font-weight: 700;
         text-align: center;
@@ -460,7 +526,9 @@
       }
 
       @keyframes availabilityPulse {
-        50% { background: rgba(234,191,74,.22); }
+        50% {
+          background: rgba(234, 191, 74, 0.22);
+        }
       }
 
       @media (max-width: 600px) {
@@ -584,6 +652,7 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
     <div id="rotate-hint">&#8635; Rotate your phone for a bigger view</div>
@@ -596,7 +665,7 @@
           <nav class="site-nav" aria-label="Main navigation">
             <button type="button" data-goto="3">About</button>
             <button type="button" data-goto="4">Account</button>
-            <button type="button" data-goto="index.html">Logout</button>
+            <button class="logout-button" type="button" id="logoutButton">Logout</button>
           </nav>
         </header>
         <main class="home-content">
@@ -618,32 +687,62 @@
               <p>Select a floor to find rooms and departments.</p>
             </div>
             <div class="floor-grid">
-              <button class="floor-card" type="button" data-floor="1" aria-label="Explore Floor 1 rooms and departments">
+              <button
+                class="floor-card"
+                type="button"
+                data-floor="1"
+                aria-label="Explore Floor 1 rooms and departments"
+              >
                 <span class="floor-icon" aria-hidden="true">🏢</span>
                 <span class="floor-number">Floor 1</span>
                 <span class="floor-action">Explore Rooms</span>
               </button>
-              <button class="floor-card" type="button" data-floor="2" aria-label="Explore Floor 2 rooms and departments">
+              <button
+                class="floor-card"
+                type="button"
+                data-floor="2"
+                aria-label="Explore Floor 2 rooms and departments"
+              >
                 <span class="floor-icon" aria-hidden="true">🏢</span>
                 <span class="floor-number">Floor 2</span>
                 <span class="floor-action">Explore Rooms</span>
               </button>
-              <button class="floor-card" type="button" data-floor="3" aria-label="Explore Floor 3 rooms and departments">
+              <button
+                class="floor-card"
+                type="button"
+                data-floor="3"
+                aria-label="Explore Floor 3 rooms and departments"
+              >
                 <span class="floor-icon" aria-hidden="true">🏢</span>
                 <span class="floor-number">Floor 3</span>
                 <span class="floor-action">Explore Rooms</span>
               </button>
-              <button class="floor-card" type="button" data-floor="4" aria-label="Explore Floor 4 rooms and departments">
+              <button
+                class="floor-card"
+                type="button"
+                data-floor="4"
+                aria-label="Explore Floor 4 rooms and departments"
+              >
                 <span class="floor-icon" aria-hidden="true">🏢</span>
                 <span class="floor-number">Floor 4</span>
                 <span class="floor-action">Explore Rooms</span>
               </button>
-              <button class="floor-card" type="button" data-floor="5" aria-label="Explore Floor 5 rooms and departments">
+              <button
+                class="floor-card"
+                type="button"
+                data-floor="5"
+                aria-label="Explore Floor 5 rooms and departments"
+              >
                 <span class="floor-icon" aria-hidden="true">🏢</span>
                 <span class="floor-number">Floor 5</span>
                 <span class="floor-action">Explore Rooms</span>
               </button>
-              <button class="floor-card" type="button" data-floor="6" aria-label="Explore Floor 6 rooms and departments">
+              <button
+                class="floor-card"
+                type="button"
+                data-floor="6"
+                aria-label="Explore Floor 6 rooms and departments"
+              >
                 <span class="floor-icon" aria-hidden="true">🏢</span>
                 <span class="floor-number">Floor 6</span>
                 <span class="floor-action">Explore Rooms</span>
@@ -663,7 +762,9 @@
         <button class="back" data-goto="1">&larr; Back to floors</button>
         <section class="floor-details-card">
           <h1 id="floorDetailsTitle">Floor Rooms and Departments</h1>
-          <p id="floorDetailsIntro">Explore the rooms and departments on this floor.</p>
+          <p id="floorDetailsIntro">
+            Explore the rooms and departments on this floor.
+          </p>
           <ul id="floorDetailsList"></ul>
         </section>
       </div>
@@ -674,10 +775,11 @@
         <section class="info-card">
           <h1>About CampusNav</h1>
           <p class="about-description">
-            CampusNav is a campus navigation website designed to help people, including students, staff
-            faculty, and visitors easily find classrooms,~ offices, and
-            departments around Gordon College. It makes navigating the campus
-            simpler and more convenient by helping users locate important places.
+            CampusNav is a campus navigation website designed to help people,
+            including students, staff faculty, and visitors easily find
+            classrooms,~ offices, and departments around Gordon College. It
+            makes navigating the campus simpler and more convenient by helping
+            users locate important places.
           </p>
           <p class="developer-credit">
             Developed by Group 2 — 404 Can't Be Found
@@ -691,53 +793,112 @@
         <section class="info-card account-card">
           <h1>Your Account</h1>
           <div class="profile-summary">
-            <img class="profile-avatar" id="profileAvatar" src="" alt="Profile avatar" />
+            <img
+              class="profile-avatar"
+              id="profileAvatar"
+              src=""
+              alt="Profile avatar"
+            />
             <div>
               <h2 id="profileDisplayName">No profile available</h2>
-              <p class="profile-status" id="profileStatus">Visitors can browse CampusNav without an account.</p>
+              <p class="profile-status" id="profileStatus">
+                Visitors can browse CampusNav without an account.
+              </p>
             </div>
           </div>
 
           <div class="profile-grid" aria-live="polite">
-            <div class="profile-field"><span>Full Name</span><strong id="profileFullName">Not provided</strong></div>
-            <div class="profile-field"><span>Email Address</span><strong id="profileEmail">Not provided</strong></div>
-            <div class="profile-field"><span>Student / User ID</span><strong id="profileUserId">Not provided</strong></div>
-            <div class="profile-field"><span>Username</span><strong id="profileUsername">Not provided</strong></div>
-            <div class="profile-field"><span>Account Role</span><strong id="profileRole">Not provided</strong></div>
+            <div class="profile-field">
+              <span>Full Name</span
+              ><strong id="profileFullName">Not provided</strong>
+            </div>
+            <div class="profile-field">
+              <span>Email Address</span
+              ><strong id="profileEmail">Not provided</strong>
+            </div>
+            <div class="profile-field">
+              <span>Student / User ID</span
+              ><strong id="profileUserId">Not provided</strong>
+            </div>
+            <div class="profile-field">
+              <span>Username</span
+              ><strong id="profileUsername">Not provided</strong>
+            </div>
+            <div class="profile-field">
+              <span>Account Role</span
+              ><strong id="profileRole">Not provided</strong>
+            </div>
           </div>
 
           <div class="account-actions">
-            <button class="primary-button" type="button" id="editProfileButton">Edit Profile</button>
-            <button class="secondary-button" type="button" id="changePasswordButton">Change Password</button>
+            <button class="primary-button" type="button" id="editProfileButton">
+              Edit Profile
+            </button>
+            <button
+              class="secondary-button"
+              type="button"
+              id="changePasswordButton"
+            >
+              Change Password
+            </button>
           </div>
 
           <form class="profile-form" id="editProfileForm" novalidate>
             <div class="form-grid">
               <div>
                 <label for="avatarInput">Profile picture</label>
-                <input type="file" id="avatarInput" accept="image/png,image/jpeg,image/webp" />
+                <input
+                  type="file"
+                  id="avatarInput"
+                  accept="image/png,image/jpeg,image/webp"
+                />
               </div>
               <div>
                 <label for="fullNameInput">Full name *</label>
-                <input type="text" id="fullNameInput" maxlength="80" autocomplete="name" required />
+                <input
+                  type="text"
+                  id="fullNameInput"
+                  maxlength="80"
+                  autocomplete="name"
+                  required
+                />
               </div>
               <div>
                 <label for="usernameInput">Username *</label>
-                <input type="text" id="usernameInput" maxlength="40" autocomplete="username" required />
+                <input
+                  type="text"
+                  id="usernameInput"
+                  maxlength="40"
+                  autocomplete="username"
+                  required
+                />
               </div>
               <div>
                 <label for="emailInput">Email address</label>
-                <input type="email" id="emailInput" maxlength="120" autocomplete="email" />
+                <input
+                  type="email"
+                  id="emailInput"
+                  maxlength="120"
+                  autocomplete="email"
+                />
               </div>
             </div>
             <p class="form-message" id="profileFormMessage" role="status"></p>
             <div class="account-actions">
               <button class="primary-button" type="submit">Save Changes</button>
-              <button class="secondary-button" type="button" id="cancelEditButton">Cancel</button>
+              <button
+                class="secondary-button"
+                type="button"
+                id="cancelEditButton"
+              >
+                Cancel
+              </button>
             </div>
           </form>
 
-          <div class="password-message" id="passwordNotice" role="status">Not Yet Available</div>
+          <div class="password-message" id="passwordNotice" role="status">
+            Not Yet Available
+          </div>
         </section>
       </div>
     </div>
@@ -764,39 +925,99 @@
       });
 
       const floorLocations = {
-        1: ["Registrar's Office", "Student Services", "Room 101 - Lecture Hall", "Room 102 - Classroom"],
-        2: ["Information Technology", "Room 201 - Computer Lab", "Room 202 - Classroom", "Room 203 - Classroom"],
-        3: ["College of Education", "Faculty Offices", "Room 301 - Classroom", "Room 302 - Lecture Hall"],
-        4: ["College of Business", "Conference Room", "Room 401 - Classroom", "Room 402 - Classroom"],
-        5: ["College of Arts and Sciences", "Science Laboratory", "Room 501 - Classroom", "Room 502 - Laboratory"],
-        6: ["Library Department", "Research Room", "Room 601 - Conference Room", "Room 602 - Faculty Lounge"]
+        1: [
+          "Registrar's Office",
+          "Student Services",
+          "Room 101 - Lecture Hall",
+          "Room 102 - Classroom",
+        ],
+        2: [
+          "Information Technology",
+          "Room 201 - Computer Lab",
+          "Room 202 - Classroom",
+          "Room 203 - Classroom",
+        ],
+        3: [
+          "College of Education",
+          "Faculty Offices",
+          "Room 301 - Classroom",
+          "Room 302 - Lecture Hall",
+        ],
+        4: [
+          "College of Business",
+          "Conference Room",
+          "Room 401 - Classroom",
+          "Room 402 - Classroom",
+        ],
+        5: [
+          "College of Arts and Sciences",
+          "Science Laboratory",
+          "Room 501 - Classroom",
+          "Room 502 - Laboratory",
+        ],
+        6: [
+          "Library Department",
+          "Research Room",
+          "Room 601 - Conference Room",
+          "Room 602 - Faculty Lounge",
+        ],
       };
 
       document.querySelectorAll(".floor-card[data-floor]").forEach((card) => {
         card.addEventListener("click", () => {
           const floor = card.dataset.floor;
-          document.getElementById("floorDetailsTitle").textContent = `Floor ${floor} Rooms and Departments`;
-          document.getElementById("floorDetailsIntro").textContent = `Explore the rooms and departments available on Floor ${floor}.`;
-          document.getElementById("floorDetailsList").innerHTML = floorLocations[floor]
-            .map((location) => `<li>${location}</li>`)
-            .join("");
+          document.getElementById("floorDetailsTitle").textContent =
+            `Floor ${floor} Rooms and Departments`;
+          document.getElementById("floorDetailsIntro").textContent =
+            `Explore the rooms and departments available on Floor ${floor}.`;
+          document.getElementById("floorDetailsList").innerHTML =
+            floorLocations[floor]
+              .map((location) => `<li>${location}</li>`)
+              .join("");
           show(5);
         });
       });
 
-      document.getElementById("campusSearch").addEventListener("submit", (event) => {
-        event.preventDefault();
-        show(2);
-      });
+      document
+        .getElementById("campusSearch")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          show(2);
+        });
 
-      const defaultAvatar = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='48' fill='%231b5138'/%3E%3Ccircle cx='48' cy='36' r='16' fill='%23eabf4a'/%3E%3Cpath d='M18 82c4-18 16-27 30-27s26 9 30 27' fill='%23eabf4a'/%3E%3C/svg%3E";
+      const defaultAvatar =
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='48' fill='%231b5138'/%3E%3Ccircle cx='48' cy='36' r='16' fill='%23eabf4a'/%3E%3Cpath d='M18 82c4-18 16-27 30-27s26 9 30 27' fill='%23eabf4a'/%3E%3C/svg%3E";
       const sessionKey = "campusnav.session";
       let currentProfile = null;
+
+      function logout() {
+        Object.keys(sessionStorage).forEach((key) => {
+          if (key.startsWith("campusnav.")) {
+            sessionStorage.removeItem(key);
+          }
+        });
+        sessionStorage.setItem("campusnav.loggedOut", "true");
+        history.replaceState({ campusNav: "loggedOut" }, "", "index.html");
+        window.location.replace("index.html");
+      }
+
+      document.getElementById("logoutButton").addEventListener("click", logout);
+
+      window.addEventListener("pageshow", (event) => {
+        if (
+          event.persisted &&
+          sessionStorage.getItem("campusnav.loggedOut") === "true"
+        ) {
+          window.location.replace("index.html");
+        }
+      });
 
       function getSessionIdentity() {
         try {
           const session = JSON.parse(sessionStorage.getItem(sessionKey));
-          return typeof session?.username === "string" ? session.username.trim() : "";
+          return typeof session?.username === "string"
+            ? session.username.trim()
+            : "";
         } catch {
           return "";
         }
@@ -808,38 +1029,55 @@
 
       function loadProfile(identity) {
         try {
-          return JSON.parse(localStorage.getItem(profileStorageKey(identity))) || {
-            fullName: "",
-            username: identity,
-            email: "",
-            avatar: ""
-          };
+          return (
+            JSON.parse(localStorage.getItem(profileStorageKey(identity))) || {
+              fullName: "",
+              username: identity,
+              email: "",
+              avatar: "",
+            }
+          );
         } catch {
           return null;
         }
       }
 
       function saveProfile(profile) {
-        localStorage.setItem(profileStorageKey(profile.username), JSON.stringify(profile));
+        localStorage.setItem(
+          profileStorageKey(profile.username),
+          JSON.stringify(profile),
+        );
       }
 
       function setProfileText(profile) {
-        document.getElementById("profileDisplayName").textContent = profile ? (profile.fullName || profile.username || "Profile available") : "No profile available";
+        document.getElementById("profileDisplayName").textContent = profile
+          ? profile.fullName || profile.username || "Profile available"
+          : "No profile available";
         document.getElementById("profileStatus").textContent = profile
           ? "This profile is stored locally in this browser."
           : "Visitors can browse CampusNav without an account.";
-        document.getElementById("profileFullName").textContent = profile?.fullName || "Not provided";
-        document.getElementById("profileEmail").textContent = profile?.email || "Not provided";
-        document.getElementById("profileUserId").textContent = profile?.username || "Not provided";
-        document.getElementById("profileUsername").textContent = profile?.username || "Not provided";
-        document.getElementById("profileRole").textContent = profile ? "Not provided" : "Not provided";
-        document.getElementById("profileAvatar").src = profile?.avatar || defaultAvatar;
+        document.getElementById("profileFullName").textContent =
+          profile?.fullName || "Not provided";
+        document.getElementById("profileEmail").textContent =
+          profile?.email || "Not provided";
+        document.getElementById("profileUserId").textContent =
+          profile?.username || "Not provided";
+        document.getElementById("profileUsername").textContent =
+          profile?.username || "Not provided";
+        document.getElementById("profileRole").textContent = profile
+          ? "Not provided"
+          : "Not provided";
+        document.getElementById("profileAvatar").src =
+          profile?.avatar || defaultAvatar;
       }
 
       function populateProfileForm() {
-        document.getElementById("fullNameInput").value = currentProfile.fullName || "";
-        document.getElementById("usernameInput").value = currentProfile.username || "";
-        document.getElementById("emailInput").value = currentProfile.email || "";
+        document.getElementById("fullNameInput").value =
+          currentProfile.fullName || "";
+        document.getElementById("usernameInput").value =
+          currentProfile.username || "";
+        document.getElementById("emailInput").value =
+          currentProfile.email || "";
         document.getElementById("avatarInput").value = "";
       }
 
@@ -852,95 +1090,120 @@
       currentProfile = sessionIdentity ? loadProfile(sessionIdentity) : null;
       setProfileText(currentProfile);
       document.getElementById("editProfileButton").disabled = !currentProfile;
-      document.getElementById("editProfileButton").title = currentProfile ? "Edit local profile" : "Sign in or enter a username to create a local browser profile";
+      document.getElementById("editProfileButton").title = currentProfile
+        ? "Edit local profile"
+        : "Sign in or enter a username to create a local browser profile";
 
-      document.getElementById("editProfileButton").addEventListener("click", () => {
-        if (!currentProfile) {
-          return;
-        }
-        populateProfileForm();
-        document.getElementById("editProfileForm").classList.add("is-open");
-      });
-
-      document.getElementById("cancelEditButton").addEventListener("click", closeProfileForm);
-      document.getElementById("changePasswordButton").addEventListener("click", () => {
-        const notice = document.getElementById("passwordNotice");
-        notice.classList.remove("is-highlighted");
-        void notice.offsetWidth;
-        notice.classList.add("is-highlighted");
-        window.setTimeout(() => notice.classList.remove("is-highlighted"), 300);
-      });
-
-      document.getElementById("avatarInput").addEventListener("change", (event) => {
-        const file = event.target.files[0];
-        if (!file) return;
-        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-          document.getElementById("profileFormMessage").textContent = "Choose a PNG, JPEG, or WebP image.";
-          document.getElementById("profileFormMessage").className = "form-message error";
-          event.target.value = "";
-          return;
-        }
-        if (file.size > 2 * 1024 * 1024) {
-          document.getElementById("profileFormMessage").textContent = "Profile picture must be smaller than 2 MB.";
-          document.getElementById("profileFormMessage").className = "form-message error";
-          event.target.value = "";
-        }
-      });
-
-      document.getElementById("editProfileForm").addEventListener("submit", (event) => {
-        event.preventDefault();
-        const fullName = document.getElementById("fullNameInput").value.trim();
-        const username = document.getElementById("usernameInput").value.trim();
-        const email = document.getElementById("emailInput").value.trim();
-        const message = document.getElementById("profileFormMessage");
-
-        if (!fullName || !username) {
-          message.textContent = "Full name and username are required.";
-          message.className = "form-message error";
-          return;
-        }
-        if (!/^[A-Za-z0-9_.-]+$/.test(username)) {
-          message.textContent = "Username may contain only letters, numbers, dots, underscores, and hyphens.";
-          message.className = "form-message error";
-          return;
-        }
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          message.textContent = "Enter a valid email address.";
-          message.className = "form-message error";
-          return;
-        }
-
-        const completeSave = () => {
-          const oldIdentity = sessionIdentity;
-          const updated = { ...currentProfile, fullName, username, email };
-          if (username !== oldIdentity) {
-            localStorage.removeItem(profileStorageKey(oldIdentity));
+      document
+        .getElementById("editProfileButton")
+        .addEventListener("click", () => {
+          if (!currentProfile) {
+            return;
           }
-          saveProfile(updated);
-          sessionStorage.setItem(sessionKey, JSON.stringify({ username }));
-          currentProfile = updated;
-          setProfileText(currentProfile);
-          message.textContent = "Profile changes saved.";
-          message.className = "form-message success";
-          window.setTimeout(closeProfileForm, 700);
-        };
+          populateProfileForm();
+          document.getElementById("editProfileForm").classList.add("is-open");
+        });
 
-        const avatarFile = document.getElementById("avatarInput").files[0];
-        if (avatarFile) {
-          const reader = new FileReader();
-          reader.onload = () => {
-            currentProfile.avatar = reader.result;
-            completeSave();
-          };
-          reader.onerror = () => {
-            message.textContent = "The profile picture could not be read. Please try another file.";
+      document
+        .getElementById("cancelEditButton")
+        .addEventListener("click", closeProfileForm);
+      document
+        .getElementById("changePasswordButton")
+        .addEventListener("click", () => {
+          const notice = document.getElementById("passwordNotice");
+          notice.classList.remove("is-highlighted");
+          void notice.offsetWidth;
+          notice.classList.add("is-highlighted");
+          window.setTimeout(
+            () => notice.classList.remove("is-highlighted"),
+            300,
+          );
+        });
+
+      document
+        .getElementById("avatarInput")
+        .addEventListener("change", (event) => {
+          const file = event.target.files[0];
+          if (!file) return;
+          if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+            document.getElementById("profileFormMessage").textContent =
+              "Choose a PNG, JPEG, or WebP image.";
+            document.getElementById("profileFormMessage").className =
+              "form-message error";
+            event.target.value = "";
+            return;
+          }
+          if (file.size > 2 * 1024 * 1024) {
+            document.getElementById("profileFormMessage").textContent =
+              "Profile picture must be smaller than 2 MB.";
+            document.getElementById("profileFormMessage").className =
+              "form-message error";
+            event.target.value = "";
+          }
+        });
+
+      document
+        .getElementById("editProfileForm")
+        .addEventListener("submit", (event) => {
+          event.preventDefault();
+          const fullName = document
+            .getElementById("fullNameInput")
+            .value.trim();
+          const username = document
+            .getElementById("usernameInput")
+            .value.trim();
+          const email = document.getElementById("emailInput").value.trim();
+          const message = document.getElementById("profileFormMessage");
+
+          if (!fullName || !username) {
+            message.textContent = "Full name and username are required.";
             message.className = "form-message error";
+            return;
+          }
+          if (!/^[A-Za-z0-9_.-]+$/.test(username)) {
+            message.textContent =
+              "Username may contain only letters, numbers, dots, underscores, and hyphens.";
+            message.className = "form-message error";
+            return;
+          }
+          if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            message.textContent = "Enter a valid email address.";
+            message.className = "form-message error";
+            return;
+          }
+
+          const completeSave = () => {
+            const oldIdentity = sessionIdentity;
+            const updated = { ...currentProfile, fullName, username, email };
+            if (username !== oldIdentity) {
+              localStorage.removeItem(profileStorageKey(oldIdentity));
+            }
+            saveProfile(updated);
+            sessionStorage.setItem(sessionKey, JSON.stringify({ username }));
+            currentProfile = updated;
+            setProfileText(currentProfile);
+            message.textContent = "Profile changes saved.";
+            message.className = "form-message success";
+            window.setTimeout(closeProfileForm, 700);
           };
-          reader.readAsDataURL(avatarFile);
-        } else {
-          completeSave();
-        }
-      });
+
+          const avatarFile = document.getElementById("avatarInput").files[0];
+          if (avatarFile) {
+            const reader = new FileReader();
+            reader.onload = () => {
+              currentProfile.avatar = reader.result;
+              completeSave();
+            };
+            reader.onerror = () => {
+              message.textContent =
+                "The profile picture could not be read. Please try another file.";
+              message.className = "form-message error";
+            };
+            reader.readAsDataURL(avatarFile);
+          } else {
+            completeSave();
+          }
+        });
 
       // Back buttons
       document.querySelectorAll(".back").forEach((btn) => {
@@ -951,20 +1214,6 @@
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") show(1);
       });
-      // LOGOUT
-      document.getElementById("logoutBtn").addEventListener("click", function () {
-      localStorage.clear();
-      sessionStorage.clear();
-      window.location.href = "index.html"; // change to your login page filename
-      });
- 
-      // SEARCH (replace with your own search logic)
-      document.getElementById("searchBtn").addEventListener("click", function () {
-      const query = document.getElementById("searchInput").value.trim();
-      if (query) {
-        alert("Searching for: " + query);
-      }
-    });
     </script>
   </body>
 </html>
