@@ -65,7 +65,10 @@
       const usernameInput = document.getElementById("username");
 
       passwordInput.addEventListener("input", () => {
-        loginButton.classList.toggle("is-ready", passwordInput.value.length > 0);
+        loginButton.classList.toggle(
+          "is-ready",
+          passwordInput.value.length > 0,
+        );
       });
 
       loginForm.addEventListener("submit", (event) => {
@@ -75,7 +78,7 @@
 
         sessionStorage.setItem(
           "campusnav.session",
-          JSON.stringify({ username })
+          JSON.stringify({ username }),
         );
         sessionStorage.removeItem("campusnav.loggedOut");
         passwordInput.value = "";
