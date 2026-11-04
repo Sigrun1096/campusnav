@@ -19,17 +19,338 @@
             Log out
           </button>
         </nav>
+        <link rel="stylesheet" href="../dashboard.css" />
+        <style>
+          .room-view {
+            display: none;
+          }
+          .room-view:target {
+            display: block;
+          }
+          .info-card:has(.room-view:target) .room-list-view {
+            display: none;
+          }
+          .room-list a {
+            color: inherit;
+            text-decoration: none;
+          }
+          .room-list a:hover {
+            text-decoration: underline;
+          }
+          .room-map-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 12px;
+            margin-top: 16px;
+          }
+          .room-map-box img {
+            width: 100%;
+            display: block;
+          }
+          .back-list {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid currentColor;
+            color: inherit;
+            font-weight: 700;
+            text-decoration: none;
+          }
+        </style>
       </header>
       <a class="back" href="../dashboard.html">&larr; Back to dashboard</a>
       <main class="info-card">
         <h1>Floor 1 Rooms and Departments</h1>
         <p>Explore the rooms and departments available on Floor 1.</p>
         <ul class="room-list">
-          <li>Registrar's Office</li>
-          <li>Student Services</li>
-          <li>Room 101 — Lecture Hall</li>
-          <li>Room 102 — Classroom</li>
+          <li><a href="floor1-101.png">Room 101</a></li>
+          <li><a href="floor1-105.png">Room 105</a></li>
+          <li><a href="floor1-106.png">Room 106</a></li>
+          <li><a href="floor1-107.png">clearRoom 107</a></li>
+          <li><a href="floor1-108.png">Room 108</a></li>
+          <li><a href="floor1-109.png">Room 109</a></li>
+          <li><a href="floor1-110.png">Room 110</a></li>
+          <li><a href="floor1-111.png">Room 111</a></li>
+          <li><a href="floor1-112.png">Room 112</a></li>
+          <li><a href="floor1-116.png">Room 116</a></li>
+          <li><a href="floor1-118.png">Room 118</a></li>
+          <li><a href="floor1-119.png">Room 119</a></li>
+          <li><a href="floor1-registrar-office.png">Registrar’s Office</a></li>
+          <li><a href="floor1-finance.png">Finance</a></li>
+          <li><a href="floor1-supply-shop.png">Supply Shop</a></li>
+          <li><a href="floor1-discipline-office.png">Discipline Office</a></li>
+          <li><a href="floor1-canteen.png">Canteen</a></li>
+          <li><a href="floor1-clinic.png">Clinic</a></li>
+          <li><a href="floor1-lab.png">Lab</a></li>
+          <li>
+            <a href="floor1-chtm-training-room.png">CHTM Training Room</a>
+          </li>
+          <li><a href="floor1-comfort-left.png">Comfort Rooms (Left)</a></li>
+          <li><a href="floor1-comfort-right.png">Comfort Rooms (Right)</a></li>
+          <li><a href="floor1-stairs-left.png">Stairs (Left)</a></li>
+          <li><a href="floor1-stairs-right.png">Stairs (Right)</a></li>
+          <li><a href="floor1-stairs-middle.png">Stairs (Middle)</a></li>
+          <li>
+            <a href="floor1-stairs-entrance.png">Stairs (Near Main Entrance)</a>
+          </li>
         </ul>
+        <section class="room-view" id="room-101">
+          <h1>Room 101</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-101.png" alt="Path to Room 101" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-105">
+          <h1>Room 105</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-105.png" alt="Path to Room 105" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-106">
+          <h1>Room 106</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-106.png" alt="Path to Room 106" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-107">
+          <h1>Room 107</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-107.png" alt="Path to Room 107" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-108">
+          <h1>Room 108</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-108.png" alt="Path to Room 108" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-109">
+          <h1>Room 109</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-109.png" alt="Path to Room 109" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-110">
+          <h1>Room 110</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-110.png" alt="Path to Room 110" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-111">
+          <h1>Room 111</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-111.png" alt="Path to Room 111" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-112">
+          <h1>Room 112</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-112.png" alt="Path to Room 112" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-116">
+          <h1>Room 116</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-116.png" alt="Path to Room 116" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-118">
+          <h1>Room 118</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-118.png" alt="Path to Room 118" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-119">
+          <h1>Room 119</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-119.png" alt="Path to Room 119" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-registrar-office">
+          <h1>Registrar’s Office</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-registrar-office.png"
+              alt="Path to Registrar’s Office"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-finance">
+          <h1>Finance</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-finance.png"
+              alt="Path to Finance"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-supply-shop">
+          <h1>Supply Shop</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-supply-shop.png"
+              alt="Path to Supply Shop"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-discipline-office">
+          <h1>Discipline Office</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-discipline-office.png"
+              alt="Path to Discipline Office"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-canteen">
+          <h1>Canteen</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-canteen.png"
+              alt="Path to Canteen"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-clinic">
+          <h1>Clinic</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-clinic.png" alt="Path to Clinic" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-lab">
+          <h1>Lab</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img loading="lazy" src="floor1-lab.png" alt="Path to Lab" />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-chtm-training-room">
+          <h1>CHTM Training Room</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-chtm-training-room.png"
+              alt="Path to CHTM Training Room"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-comfort-left">
+          <h1>Comfort Rooms (Left)</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-comfort-left.png"
+              alt="Path to Comfort Rooms (Left)"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-comfort-right">
+          <h1>Comfort Rooms (Right)</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-comfort-right.png"
+              alt="Path to Comfort Rooms (Right)"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-stairs-left">
+          <h1>Stairs (Left)</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-stairs-left.png"
+              alt="Path to Stairs (Left)"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-stairs-right">
+          <h1>Stairs (Right)</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-stairs-right.png"
+              alt="Path to Stairs (Right)"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-stairs-middle">
+          <h1>Stairs (Middle)</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-stairs-middle.png"
+              alt="Path to Stairs (Middle)"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
+        <section class="room-view" id="room-stairs-entrance">
+          <h1>Stairs (Near Main Entrance)</h1>
+          <p>Located on Floor 1.</p>
+          <div class="room-map-box">
+            <img
+              loading="lazy"
+              src="floor1-stairs-entrance.png"
+              alt="Path to Stairs (Near Main Entrance)"
+            />
+          </div>
+          <a class="back-list" href="#">&larr; Back to Floor 1 list</a>
+        </section>
       </main>
     </div>
     <script src="../campus-pages.js" defer></script>
