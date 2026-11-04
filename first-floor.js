@@ -63,7 +63,12 @@
       label: "CHTM Training Room",
     },
     {
-      aliases: ["comfort room", "restroom", "cr"],
+      aliases: [
+        "1st floor comfort room",
+        "first floor comfort room",
+        "1st floor restroom",
+        "first floor restroom",
+      ],
       image: "comfort-left.png",
       label: "Comfort Room",
     },
