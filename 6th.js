@@ -39,10 +39,6 @@ if (sixthFloorLocationImage && sixthFloorSearchForm) {
       aliases: [
         "sixth floor comfort room",
         "6th floor comfort room",
-        "comfort room",
-        "comfort rooms",
-        "restroom",
-        "toilet",
       ],
       image: "1.jpg",
       label: "Sixth floor comfort room",
@@ -79,7 +75,9 @@ if (sixthFloorLocationImage && sixthFloorSearchForm) {
     const place = findFloor6Place(query);
     const roomIsOnFloor6 = roomNumber && Number(roomNumber) >= 601 && Number(roomNumber) <= 628;
     const normalizedQuery = normalize(query);
-    const isComfortRoom = normalizedQuery.includes("comfortroom");
+    const isComfortRoom =
+      normalizedQuery.includes("6thfloorcomfortroom") ||
+      normalizedQuery.includes("sixthfloorcomfortroom");
 
     if (!roomIsOnFloor6 && !isComfortRoom && !place) {
       return;
