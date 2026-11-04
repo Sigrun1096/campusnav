@@ -8,6 +8,9 @@
 
   const floor1Rooms = new Map([
     ["101", "101.png"],
+    ["102", "supply-shop.png"],
+    ["103", "finance.png"],
+    ["104", "reistrar-office.png"],
     ["105", "105.png"],
     ["106", "106.png"],
     ["107", "107.png"],
@@ -16,7 +19,11 @@
     ["110", "110.png"],
     ["111", "111.png"],
     ["112", "112.png"],
+    ["113", "comfort-right.png"],
+    ["114", "lab.png"],
+    ["115", "clinic.png"],
     ["116", "116.png"],
+    ["117", "discipline-office.png"],
     ["118", "118.png"],
     ["119", "119.png"],
   ]);
