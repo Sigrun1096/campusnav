@@ -67,7 +67,6 @@ const floorLocations = {
     "Room 502 - Laboratory",
   ],
   6: [
-    "Library Department",
     "Research Room",
     "Room 601 - Conference Room",
     "Room 602 - Faculty Lounge",

@@ -43,11 +43,6 @@ if (sixthFloorLocationImage && sixthFloorSearchForm) {
       image: "1.jpg",
       label: "Sixth floor comfort room",
     },
-    {
-      aliases: ["library", "library department"],
-      image: "24.jpg",
-      label: "Library",
-    },
   ];
 
   const normalize = (value) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
