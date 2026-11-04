@@ -1,7 +1,8 @@
-const locationImage = document.getElementById("searchLocationImage");
-const searchForm = document.getElementById("campusSearch");
+(function () {
+const fourthFloorLocationImage = document.getElementById("searchLocationImage");
+const fourthFloorSearchForm = document.getElementById("campusSearch");
 
-if (locationImage && searchForm) {
+if (fourthFloorLocationImage && fourthFloorSearchForm) {
   const floor4Rooms = new Map([
     ["401", "5.jpg"],
     ["402", "6.jpg"],
@@ -57,25 +58,30 @@ if (locationImage && searchForm) {
     return null;
   };
 
-  searchForm.addEventListener("submit", () => {
+  fourthFloorSearchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     const query = document.getElementById("searchQuery").value.trim();
     const roomNumber = query.match(/\b4\d{2}\b/)?.[0];
     const place = findFloor4Place(query);
+    if (!roomNumber && !place) {
+      return;
+    }
     const imageName = roomNumber ? floor4Rooms.get(roomNumber) : place?.image;
 
-    locationImage.hidden = !imageName;
+    fourthFloorLocationImage.hidden = !imageName;
 
     if (imageName) {
       const roomName = roomNumber ? `Room ${roomNumber}` : place.label;
-      locationImage.src = `floors/4th  floor/${imageName}`;
-      locationImage.alt = `${roomName} location map`;
+      fourthFloorLocationImage.src = `floors/4th  floor/${imageName}`;
+      fourthFloorLocationImage.alt = `${roomName} location map`;
     } else {
-      locationImage.removeAttribute("src");
-      locationImage.alt = "";
+      fourthFloorLocationImage.removeAttribute("src");
+      fourthFloorLocationImage.alt = "";
     }
   });
 
   document.getElementById("searchBack").addEventListener("click", () => {
-    locationImage.hidden = true;
+    fourthFloorLocationImage.hidden = true;
   });
 }
+})();

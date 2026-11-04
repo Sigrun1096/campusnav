@@ -28,7 +28,37 @@ const floorLocations = {
     "Room 419 - Classroom"
   ],
   5: ["College of Arts and Sciences", "Science Laboratory", "Room 501 - Classroom", "Room 502 - Laboratory"],
-  6: ["Library Department", "Research Room", "Room 601 - Conference Room", "Room 602 - Faculty Lounge"]
+  6: [
+    "Sixth floor comfort room",
+    "Room 601 - Classroom",
+    "Room 602 - Classroom",
+    "Room 603 - Classroom",
+    "Room 604 - Classroom",
+    "Room 605 - Classroom",
+    "Room 606 - Classroom",
+    "Room 607 - Classroom",
+    "Room 608 - Classroom",
+    "Room 609 - Classroom",
+    "Room 610 - Classroom",
+    "Room 611 - Classroom",
+    "Room 612 - Classroom",
+    "Room 613 - Classroom",
+    "Room 614 - Classroom",
+    "Room 615 - Classroom",
+    "Room 616 - Classroom",
+    "Room 617 - Classroom",
+    "Room 618 - Classroom",
+    "Room 619 - Classroom",
+    "Room 620 - Classroom",
+    "Room 621 - Classroom",
+    "Room 622 - Classroom",
+    "Room 623 - Classroom",
+    "Room 624 - Classroom",
+    "Room 625 - Classroom",
+    "Room 626 - Classroom",
+    "Room 627 - Classroom",
+    "Room 628 - Classroom"
+  ]
 };
 
 const page1 = document.getElementById("page1");

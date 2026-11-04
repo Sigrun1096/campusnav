@@ -46,7 +46,9 @@ const closeRoomImage = () => {
   roomImage.removeAttribute("src");
 };
 
-roomImageViewer.querySelector(".room-image-back").addEventListener("click", closeRoomImage);
+roomImageViewer
+  .querySelector(".room-image-back")
+  .addEventListener("click", closeRoomImage);
 
 document.querySelectorAll(".room-list a[href$='.jpg']").forEach((link) => {
   link.addEventListener("click", (event) => {
