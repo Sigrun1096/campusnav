@@ -50,15 +50,17 @@ roomImageViewer
   .querySelector(".room-image-back")
   .addEventListener("click", closeRoomImage);
 
-document.querySelectorAll(".room-list a[href$='.jpg']").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    roomImage.src = link.getAttribute("href");
-    roomImage.alt = link.textContent.trim();
-    roomImageTitle.textContent = link.textContent.trim();
-    roomImageViewer.hidden = false;
+document
+  .querySelectorAll(".room-list a[href$='.jpg'], .room-list a[href$='.png']")
+  .forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      roomImage.src = link.getAttribute("href");
+      roomImage.alt = link.textContent.trim();
+      roomImageTitle.textContent = link.textContent.trim();
+      roomImageViewer.hidden = false;
+    });
   });
-});
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !roomImageViewer.hidden) {
