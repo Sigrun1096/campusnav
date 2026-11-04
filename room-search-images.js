@@ -35,16 +35,7 @@ if (locationImage && searchForm) {
       image: "24.jpg",
       label: "Library"
     },
-    {
-      aliases: ["college of business", "business department"],
-      image: "12.jpg",
-      label: "College of Business"
-    },
-    {
-      aliases: ["conference room"],
-      image: "13.jpg",
-      label: "Conference room"
-    }
+    
   ];
 
   const normalize = (value) =>
