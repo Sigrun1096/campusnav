@@ -1,125 +1,11 @@
 (function () {
-const fourthFloorLocationImage = document.getElementById("searchLocationImage");
-const fourthFloorSearchForm = document.getElementById("campusSearch");
+  const locationImage = document.getElementById("searchLocationImage");
+  const searchForm = document.getElementById("campusSearch");
 
-<<<<<<< HEAD
-if (fourthFloorLocationImage && fourthFloorSearchForm) {
-=======
-if (locationImage && searchForm) {
-  const FLOOR1 = new Map([
-    ["101", "101.png"],
-    ["105", "105.png"],
-    ["106", "106.png"],
-    ["107", "107.png"],
-    ["108", "108.png"],
-    ["109", "109.png"],
-    ["110", "110.png"],
-    ["111", "111.png"],
-    ["112", "112.png"],
-    ["116", "116.png"],
-    ["118", "118.png"],
-    ["119", "119.png"],
-  ]);
+  if (!locationImage || !searchForm) {
+    return;
+  }
 
-  const floor1Places = [
-    {
-      aliases: ["registrar", "registrar office"],
-      image: "registrar-office.png",
-      label: "Registrar Office",
-    },
-    {
-      aliases: ["finance", "finance office"],
-      image: "finance.png",
-      label: "Finance Office",
-    },
-    {
-      aliases: ["supply", "supply shop"],
-      image: "supply-shop.png",
-      label: "Supply Shop",
-    },
-    {
-      aliases: ["discipline", "discipline office"],
-      image: "discipline-office.png",
-      label: "Discipline Office",
-    },
-    {
-      aliases: ["canteen"],
-      image: "canteen.png",
-      label: "Canteen",
-    },
-    {
-      aliases: ["clinic"],
-      image: "clinic.png",
-      label: "Clinic",
-    },
-    {
-      aliases: ["lab", "laboratory"],
-      image: "lab.png",
-      label: "Laboratory",
-    },
-    {
-      aliases: ["chtm", "training room", "chtm training room"],
-      image: "chtm-training-room.png",
-      label: "CHTM Training Room",
-    },
-    {
-      aliases: ["comfort room", "restroom", "cr"],
-      image: "comfort-left.png",
-      label: "Comfort Room",
-    },
-    {
-      aliases: ["stairs", "stairs entrance"],
-      image: "stairs-entrance.png",
-      label: "Stairs Entrance",
-    },
-  ];
-
-  const normalize = (value) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
-
-  const findFloor4Place = (query) => {
-    const normalizedQuery = normalize(query);
-
-    for (const place of floor4Places) {
-      if (
-        place.aliases.some((alias) =>
-          normalizedQuery.includes(normalize(alias)),
-        )
-      ) {
-        return place;
-      }
-    }
-
-    return null;
-  };
-
-  searchForm.addEventListener("submit", () => {
-    const query = document.getElementById("searchQuery").value.trim();
-    const roomNumber = query.match(/\b4\d{2}\b/)?.[0];
-    const place = findFloor4Place(query);
-    const imageName = roomNumber ? floor1Rooms.get(roomNumber) : place?.image;
-
-    locationImage.hidden = !imageName;
-
-    if (imageName) {
-      const roomName = roomNumber ? `Room ${roomNumber}` : place.label;
-      locationImage.src = `floors/1st  floor/${imageName}`;
-      locationImage.alt = `${roomName} location map`;
-    } else {
-      locationImage.removeAttribute("src");
-      locationImage.alt = "";
-    }
-  });
-
-  document.getElementById("searchBack").addEventListener("click", () => {
-    locationImage.hidden = true;
-  });
-}
-
-const locationImage = document.getElementById("searchLocationImage");
-const searchForm = document.getElementById("campusSearch");
-
-if (locationImage && searchForm) {
->>>>>>> ab203b80656a655085a6dfd471f37266ee1524bf
   const floor4Rooms = new Map([
     ["401", "5.jpg"],
     ["402", "6.jpg"],
@@ -146,10 +32,8 @@ if (locationImage && searchForm) {
     {
       aliases: [
         "4th floor comfort room",
-        "comfort room",
-        "comfort rooms",
-        "restroom",
-        "toilet",
+        "4th floor comfort rooms",
+        "4th floor restroom",
       ],
       image: "3.jpg",
       label: "Fourth floor comfort room",
@@ -159,9 +43,6 @@ if (locationImage && searchForm) {
       image: "24.jpg",
       label: "Library",
     },
-<<<<<<< HEAD
-    
-=======
     {
       aliases: ["college of business", "business department"],
       image: "12.jpg",
@@ -172,7 +53,6 @@ if (locationImage && searchForm) {
       image: "13.jpg",
       label: "Conference room",
     },
->>>>>>> ab203b80656a655085a6dfd471f37266ee1524bf
   ];
 
   const normalize = (value) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -193,30 +73,44 @@ if (locationImage && searchForm) {
     return null;
   };
 
-  fourthFloorSearchForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     const query = document.getElementById("searchQuery").value.trim();
-    const roomNumber = query.match(/\b4\d{2}\b/)?.[0];
-    const place = findFloor4Place(query);
-    if (!roomNumber && !place) {
+    const roomNumber = query.match(/\b\d{3}\b/)?.[0];
+
+    if (roomNumber && /^4\d{2}$/.test(roomNumber)) {
+      const imageName = floor4Rooms.get(roomNumber);
+      if (!imageName) {
+        return;
+      }
+      locationImage.hidden = false;
+      locationImage.src = `floors/4th  floor/${imageName}`;
+      locationImage.alt = `Room ${roomNumber} location map`;
       return;
     }
-    const imageName = roomNumber ? floor4Rooms.get(roomNumber) : place?.image;
 
-    fourthFloorLocationImage.hidden = !imageName;
+    if (roomNumber) {
+      return;
+    }
+
+    const place = findFloor4Place(query);
+    if (!place) {
+      return;
+    }
+
+    const imageName = place.image;
+    locationImage.hidden = !imageName;
 
     if (imageName) {
-      const roomName = roomNumber ? `Room ${roomNumber}` : place.label;
-      fourthFloorLocationImage.src = `floors/4th  floor/${imageName}`;
-      fourthFloorLocationImage.alt = `${roomName} location map`;
+      locationImage.src = `floors/4th  floor/${imageName}`;
+      locationImage.alt = `${place.label} location map`;
     } else {
-      fourthFloorLocationImage.removeAttribute("src");
-      fourthFloorLocationImage.alt = "";
+      locationImage.removeAttribute("src");
+      locationImage.alt = "";
     }
   });
 
   document.getElementById("searchBack").addEventListener("click", () => {
-    fourthFloorLocationImage.hidden = true;
+    locationImage.hidden = true;
   });
-}
 })();
