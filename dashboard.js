@@ -1,7 +1,40 @@
 const floorLocations = {
-  1: ["Registrar's Office", "Student Services", "Room 101 - Lecture Hall", "Room 102 - Classroom"],
-  2: ["Information Technology", "Room 201 - Computer Lab", "Room 202 - Classroom", "Room 203 - Classroom"],
-  3: ["College of Education", "Faculty Offices", "Room 301 - Classroom", "Room 302 - Lecture Hall"],
+  1: [
+    "1st floor Comfort Room",
+    "Supply Shop",
+    "Finance",
+    "Registrar Office",
+    "Lab",
+    "Clinic",
+    "Discipline Office",
+    "Canteen",
+    "CHTM Training Room",
+    "Room 101 - Classroom",
+    "Room 105 - Classroom",
+    "Room 106 - Classroom",
+    "Room 107 - Classroom",
+    "Room 108 - Classroom",
+    "Room 109 - Classroom",
+    "Room 110 - Classroom",
+    "Room 111 - Classroom",
+    "Room 112 - Classroom",
+    "Room 116 - Classroom",
+    "Room 117 - Classroom",
+    "Room 118 - Classroom",
+    "Room 119 - Classroom",
+  ],
+  2: [
+    "Information Technology",
+    "Room 201 - Computer Lab",
+    "Room 202 - Classroom",
+    "Room 203 - Classroom",
+  ],
+  3: [
+    "College of Education",
+    "Faculty Offices",
+    "Room 301 - Classroom",
+    "Room 302 - Lecture Hall",
+  ],
   4: [
     "College of Business",
     "Conference Room",
@@ -25,8 +58,21 @@ const floorLocations = {
     "Room 416 - Classroom",
     "Room 417 - Classroom",
     "Room 418 - Classroom",
-    "Room 419 - Classroom"
+    "Room 419 - Classroom",
   ],
+  5: [
+    "College of Arts and Sciences",
+    "Science Laboratory",
+    "Room 501 - Classroom",
+    "Room 502 - Laboratory",
+  ],
+  6: [
+    "Library Department",
+    "Research Room",
+    "Room 601 - Conference Room",
+    "Room 602 - Faculty Lounge",
+  ],
+<<<<<<< HEAD
   5: ["College of Arts and Sciences", "Science Laboratory", "Room 501 - Classroom", "Room 502 - Laboratory"],
   6: [
     "Sixth floor comfort room",
@@ -59,6 +105,8 @@ const floorLocations = {
     "Room 627 - Classroom",
     "Room 628 - Classroom"
   ]
+=======
+>>>>>>> ab203b80656a655085a6dfd471f37266ee1524bf
 };
 
 const page1 = document.getElementById("page1");
@@ -78,17 +126,22 @@ document.getElementById("campusSearch").addEventListener("submit", (event) => {
   }
 
   const matches = Object.entries(floorLocations).flatMap(([floor, locations]) =>
-    locations.filter((location) => location.toLowerCase().includes(query.toLowerCase()))
-      .map((location) => ({ floor, location }))
+    locations
+      .filter((location) =>
+        location.toLowerCase().includes(query.toLowerCase()),
+      )
+      .map((location) => ({ floor, location })),
   );
 
   document.getElementById("floorDetailsTitle").textContent =
-    matches.length === 1 ? matches[0].location : `Search results for "${query}"`;
-  document.getElementById("floorDetailsIntro").textContent =
-    matches.length
-      ? matches.length === 1 ? `Located on Floor ${matches[0].floor}.`
-        : `Found ${matches.length} matching campus locations.`
-      : "No rooms or departments matched your search.";
+    matches.length === 1
+      ? matches[0].location
+      : `Search results for "${query}"`;
+  document.getElementById("floorDetailsIntro").textContent = matches.length
+    ? matches.length === 1
+      ? `Located on Floor ${matches[0].floor}.`
+      : `Found ${matches.length} matching campus locations.`
+    : "No rooms or departments matched your search.";
 
   const list = document.getElementById("floorDetailsList");
   list.replaceChildren();
@@ -130,7 +183,10 @@ function logout() {
 document.getElementById("logoutButton").addEventListener("click", logout);
 
 window.addEventListener("pageshow", (event) => {
-  if (event.persisted && sessionStorage.getItem("campusnav.loggedOut") === "true") {
+  if (
+    event.persisted &&
+    sessionStorage.getItem("campusnav.loggedOut") === "true"
+  ) {
     window.location.replace("index.html");
   }
 });

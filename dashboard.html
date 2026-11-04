@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CampusNav Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboard.css" />
   </head>
   <body>
     <div id="stage">
       <div class="page active" id="page1">
         <header class="site-header">
           <a class="site-brand" href="dashboard.html">
-            <img src="icon.png" alt="">
+            <img src="icon.png" alt="" />
             <span>CampusNav</span>
           </a>
           <nav class="site-nav" aria-label="Main navigation">
             <a href="about.html">About</a>
             <a href="profile.html">Profile</a>
             <a href="announcements.html">Announcements</a>
-            <button class="logout-button" type="button" id="logoutButton">Log out</button>
+            <button class="logout-button" type="button" id="logoutButton">
+              Log out
+            </button>
           </nav>
         </header>
         <main class="home-content">
@@ -27,7 +29,12 @@
             <p>Search for a room or department.</p>
           </div>
           <form class="search-form" id="campusSearch">
-            <input id="searchQuery" type="search" placeholder="Search for rooms or departments" aria-label="Search for rooms or departments">
+            <input
+              id="searchQuery"
+              type="search"
+              placeholder="Search for rooms or departments"
+              aria-label="Search for rooms or departments"
+            />
             <button type="submit">Search</button>
           </form>
           <section class="floor-explorer" aria-labelledby="floorExplorerTitle">
@@ -36,23 +43,50 @@
               <p>Select a floor to find rooms and departments.</p>
             </div>
             <div class="floor-grid">
-              <a class="floor-card" href="floors/floor1.html"><span class="floor-number">Floor 1</span><span class="floor-action">Explore rooms</span></a>
-              <a class="floor-card" href="floors/floor2.html"><span class="floor-number">Floor 2</span><span class="floor-action">Explore rooms</span></a>
-              <a class="floor-card" href="floors/floor3.html"><span class="floor-number">Floor 3</span><span class="floor-action">Explore rooms</span></a>
-              <a class="floor-card" href="floors/floor4.html"><span class="floor-number">Floor 4</span><span class="floor-action">Explore rooms</span></a>
-              <a class="floor-card" href="floors/floor5.html"><span class="floor-number">Floor 5</span><span class="floor-action">Explore rooms</span></a>
-              <a class="floor-card" href="floors/floor6.html"><span class="floor-number">Floor 6</span><span class="floor-action">Explore rooms</span></a>
+              <a class="floor-card" href="floors/floor1.html"
+                ><span class="floor-number">Floor 1</span
+                ><span class="floor-action">Explore rooms</span></a
+              >
+              <a class="floor-card" href="floors/floor2.html"
+                ><span class="floor-number">Floor 2</span
+                ><span class="floor-action">Explore rooms</span></a
+              >
+              <a class="floor-card" href="floors/floor3.html"
+                ><span class="floor-number">Floor 3</span
+                ><span class="floor-action">Explore rooms</span></a
+              >
+              <a class="floor-card" href="floors/floor4.html"
+                ><span class="floor-number">Floor 4</span
+                ><span class="floor-action">Explore rooms</span></a
+              >
+              <a class="floor-card" href="floors/floor5.html"
+                ><span class="floor-number">Floor 5</span
+                ><span class="floor-action">Explore rooms</span></a
+              >
+              <a class="floor-card" href="floors/floor6.html"
+                ><span class="floor-number">Floor 6</span
+                ><span class="floor-action">Explore rooms</span></a
+              >
             </div>
           </section>
         </main>
       </div>
       <div class="page floor-page" id="page5">
-        <button class="back" id="searchBack" type="button">&larr; Back to floors</button>
+        <button class="back" id="searchBack" type="button">
+          &larr; Back to floors
+        </button>
         <section class="floor-details-card">
           <h1 id="floorDetailsTitle">Floor Rooms and Departments</h1>
-          <p id="floorDetailsIntro">Explore the rooms and departments on this floor.</p>
+          <p id="floorDetailsIntro">
+            Explore the rooms and departments on this floor.
+          </p>
           <ul id="floorDetailsList"></ul>
-          <img id="searchLocationImage" class="search-location-image" alt="" hidden>
+          <img
+            id="searchLocationImage"
+            class="search-location-image"
+            alt=""
+            hidden
+          />
         </section>
       </div>
     </div>
