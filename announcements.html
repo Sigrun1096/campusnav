@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Announcements | CampusNav</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="page active info-page">
+      <header class="site-header">
+        <a class="site-brand" href="dashboard.html"
+          ><img src="icon.png" alt="" /><span>CampusNav</span></a
+        >
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="about.html">About</a><a href="profile.html">Profile</a
+          ><a href="announcements.html">Announcements</a>
+          <button class="logout-button" type="button" id="logoutButton">
+            Log out
+          </button>
+        </nav>
+      </header>
+      <a class="back" href="dashboard.html">&larr; Back</a>
+      <main class="info-card announcement-card empty-state">
+        <div class="empty-icon" aria-hidden="true">
+          <span></span>
+        </div>
+        <h1>Announcements</h1>
+        <div class="announcement-divider"></div>
+        <h2>No Announcements Yet</h2>
+        <p>
+          There are no campus announcements at this time. Check back later for
+          updates.
+        </p>
+      </main>
+    </div>
+    <script src="campus-pages.js" defer></script>
+  </body>
+</html>

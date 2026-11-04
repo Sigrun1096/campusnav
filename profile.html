@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile | CampusNav</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="page active info-page">
+      <header class="site-header">
+        <a class="site-brand" href="dashboard.html"
+          ><img src="icon.png" alt="" /><span>CampusNav</span></a
+        >
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="about.html">About</a><a href="profile.html">Profile</a
+          ><a href="announcements.html">Announcements</a>
+          <button class="logout-button" type="button" id="logoutButton">
+            Log out
+          </button>
+        </nav>
+      </header>
+      <a class="back" href="dashboard.html">&larr; Back</a>
+      <main class="info-card">
+        <h1>Your Profile</h1>
+        <div class="profile-summary">
+          <img
+            class="profile-avatar"
+            id="profileAvatar"
+            src=""
+            alt="Profile avatar"
+          />
+          <div>
+            <h2 id="profileDisplayName">No profile available</h2>
+            <p class="profile-status" id="profileStatus">
+              Visitors can browse CampusNav without an account.
+            </p>
+          </div>
+        </div>
+        <div class="profile-grid" aria-live="polite">
+          <div class="profile-field">
+            <span>Full Name</span
+            ><strong id="profileFullName">Not provided</strong>
+          </div>
+          <div class="profile-field">
+            <span>Email Address</span
+            ><strong id="profileEmail">Not provided</strong>
+          </div>
+          <div class="profile-field">
+            <span>Student / User ID</span
+            ><strong id="profileUserId">Not provided</strong>
+          </div>
+          <div class="profile-field">
+            <span>Username</span
+            ><strong id="profileUsername">Not provided</strong>
+          </div>
+          <div class="profile-field">
+            <span>Account Role</span
+            ><strong id="profileRole">Not provided</strong>
+          </div>
+        </div>
+        <div class="account-actions">
+          <button class="primary-button" type="button" id="editProfileButton">
+            Edit Profile
+          </button>
+          <button
+            class="secondary-button"
+            type="button"
+            id="changePasswordButton"
+          >
+            Change Password
+          </button>
+        </div>
+        <form class="profile-form" id="editProfileForm" novalidate>
+          <div class="form-grid">
+            <div>
+              <label for="avatarInput">Profile picture</label
+              ><input
+                type="file"
+                id="avatarInput"
+                accept="image/png,image/jpeg,image/webp"
+              />
+            </div>
+            <div>
+              <label for="fullNameInput">Full name *</label
+              ><input
+                type="text"
+                id="fullNameInput"
+                maxlength="80"
+                autocomplete="name"
+                required
+              />
+            </div>
+            <div>
+              <label for="usernameInput">Username *</label
+              ><input
+                type="text"
+                id="usernameInput"
+                maxlength="40"
+                autocomplete="username"
+                required
+              />
+            </div>
+            <div>
+              <label for="emailInput">Email address</label
+              ><input
+                type="email"
+                id="emailInput"
+                maxlength="120"
+                autocomplete="email"
+              />
+            </div>
+          </div>
+          <p class="form-message" id="profileFormMessage" role="status"></p>
+          <div class="account-actions">
+            <button class="primary-button" type="submit">Save Changes</button
+            ><button
+              class="secondary-button"
+              type="button"
+              id="cancelEditButton"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+        <div class="password-message" id="passwordNotice" role="status">
+          Not Yet Available
+        </div>
+      </main>
+    </div>
+    <script src="campus-pages.js" defer></script>
+    <script src="profile.js" defer></script>
+  </body>
+</html>
