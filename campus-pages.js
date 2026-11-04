@@ -25,34 +25,3 @@ window.addEventListener("pageshow", (event) => {
     window.location.replace(inFloors ? "../index.html" : "index.html");
   }
 });
-
-const locationImage = document.getElementById("searchLocationImage");
-const searchForm = document.getElementById("campusSearch");
-
-if (locationImage && searchForm) {
-  const FLOOR1_SEARCH = {
-    101: "101",
-    105: "105",
-    106: "106",
-    107: "107",
-    108: "108",
-    109: "109",
-    110: "110",
-    111: "111",
-    112: "112",
-    116: "116",
-    118: "118",
-    119: "119",
-    registrar: "registrar-office",
-    finance: "finance",
-    supply: "supply-shop",
-    discipline: "discipline-office",
-    canteen: "canteen",
-    clinic: "clinic",
-    lab: "lab",
-    chtm: "chtm-training-room",
-    "training room": "chtm-training-room",
-    "comfort room": "comfort-left",
-    stairs: "stairs-entrance",
-  };
-}
